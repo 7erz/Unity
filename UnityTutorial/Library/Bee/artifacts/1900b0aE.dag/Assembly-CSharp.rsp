@@ -358,6 +358,7 @@
 "Assets/Scripts/DataManager.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/LifeCycle.cs"
+"Assets/Scripts/Player.cs"
 "Assets/Sport Car - 3D model/Scripts/CameraScript.cs"
 "Assets/Sport Car - 3D model/Scripts/LightEffects.cs"
 -langversion:9.0
