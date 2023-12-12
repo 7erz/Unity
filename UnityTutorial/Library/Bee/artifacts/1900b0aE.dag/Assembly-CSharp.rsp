@@ -362,6 +362,7 @@
 "Assets/Anim1/Sport Car - 3D model/Scripts/CameraScript.cs"
 "Assets/Anim1/Sport Car - 3D model/Scripts/LightEffects.cs"
 "Assets/UGUI/Scripts/MainMenu.cs"
+"Assets/UGUI/Scripts/TextManager.cs"
 -langversion:9.0
 
 /deterministic
