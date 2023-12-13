@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     public Vector3 dir;
     public float speed = 1f;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     // Update is called once per frame
     void Update()
     {

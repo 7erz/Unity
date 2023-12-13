@@ -361,6 +361,7 @@
 "Assets/Anim1/Scripts/Player.cs"
 "Assets/Anim1/Sport Car - 3D model/Scripts/CameraScript.cs"
 "Assets/Anim1/Sport Car - 3D model/Scripts/LightEffects.cs"
+"Assets/Move/Scripts/PlayerController.cs"
 "Assets/UGUI/Scripts/MainMenu.cs"
 "Assets/UGUI/Scripts/TextManager.cs"
 -langversion:9.0
