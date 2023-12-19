@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    /*
     //1. 몬스터 4마리 생성
     //2. 두번째부터 생성되는 몬스터 위치는 x축 + 5;
-
-
-
     [SerializeField] GameObject unit;
     [SerializeField] Transform createPos;
     [Tooltip("생성할 오브젝트 수량 변수")]
@@ -34,11 +32,71 @@ public class SpawnManager : MonoBehaviour
             //Instantiate(unit, createPos);
         }
         //Instantiate(unit,createPos);    //부모 밑에 자식으로 생성함
+    }*/
+
+    //팩토리 후
+    [SerializeField] Factory factory;   //월드 공간에 있어야 사용 가능
+
+    [SerializeField] List<Unit> listUnits;
+
+    float timer = 0f;
+
+    //코루틴
+    /*public void Start()
+    {
+        //UseFactory();
+        StartCoroutine(CreateRoutine());
+
+        Debug.Log("Hello World!");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(LogRoutine());
+        }
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            StopAllCoroutines();
+        }
     }
+
+    public void Update()
+    {
+        timer += Time.deltaTime;
+
+        if(timer >= 5f)
+        {
+            UseFactory();
+            timer = 0f;
+        }
+    }
+
+
+
+    public IEnumerator LogRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Debug.Log("Attack");
+    }
+
+    public void UseFactory()
+    {
+        factory.CreateUnit(listUnits[Random.Range(0, listUnits.Count)]); //0~2라서 0,1만 나옴 (2빼고)
+    }
+
+    public IEnumerator CreateRoutine()
+    {
+        while (true)
+        {
+            factory.CreateUnit(listUnits[Random.Range(0, listUnits.Count)]);
+
+            //WaitForSeconds(시간) : 특정한 시간동안 코루틴을 대기
+
+            yield return new WaitForSeconds(5f);
+        }
+
+    }*/
 }
