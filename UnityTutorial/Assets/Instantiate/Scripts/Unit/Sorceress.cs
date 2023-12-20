@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class Sorceress : Unit
 {
-    public override void Move()
-    {
-        Debug.Log("소서리스 Move");
-    }
 }
