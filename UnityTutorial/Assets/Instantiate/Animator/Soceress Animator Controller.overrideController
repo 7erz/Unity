@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Soceress Animator Controller
+  m_Controller: {fileID: 9100000, guid: 16c26afe2d4d7e44399518cf361362a5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: da838b6ffb04ccb49b6232d29e2668a5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: da838b6ffb04ccb49b6232d29e2668a5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3af57e0dc7fb3dd43b707b118611b773, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3af57e0dc7fb3dd43b707b118611b773, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9553625be46bd0f4c98e8c6334bc1133, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9553625be46bd0f4c98e8c6334bc1133, type: 2}
