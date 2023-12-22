@@ -22,8 +22,22 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] Animator animator;
 
+    [SerializeField] protected float health;
 
+    public void OnHit(float damage)
+    {
+        health -= damage;
 
+        if(health <= 0)
+        {
+            state = State.Die;
+        }
+    }
+
+    public virtual void Release()
+    {
+        Destroy(gameObject);
+    }
 
     private void Awake()
     {
@@ -49,6 +63,10 @@ public abstract class Unit : MonoBehaviour
     //추상화 물려줄 때 외부에서 쓰기 위해서 abstract 사용
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            OnHit(10);
+        }
         switch (state)
         {
             case State.Move:
@@ -98,7 +116,7 @@ public abstract class Unit : MonoBehaviour
     }
     public virtual void Die()
     {
-
+        animator.Play("Die");
     }
     //OnTriggerEnter : Trigger 충돌시 이벤트 호출
     public void OnTriggerEnter(Collider other)
