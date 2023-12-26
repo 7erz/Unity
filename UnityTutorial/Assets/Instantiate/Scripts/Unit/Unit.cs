@@ -6,7 +6,8 @@ public enum State
 {
     Move,
     Attack,
-    Die
+    Die,
+    None
 }
 
 public abstract class Unit : MonoBehaviour
@@ -24,11 +25,15 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] protected float health;
 
+    [SerializeField] Sound sound = new Sound();
+
+    
+
     public void OnHit(float damage)
     {
         health -= damage;
 
-        if(health <= 0)
+        if(health <= 0 && state != State.Die)
         {
             state = State.Die;
         }
@@ -113,10 +118,18 @@ public abstract class Unit : MonoBehaviour
     public virtual void Attack()
     {
         animator.SetBool("Attack", true);
+        
+    }
+
+    public void AttackSound()
+    {
+        SoundManager.instance.Sound(sound.audioClips[0]);
     }
     public virtual void Die()
     {
         animator.Play("Die");
+        SoundManager.instance.Sound(sound.audioClips[1]);
+        state = State.None;
     }
     //OnTriggerEnter : Trigger 충돌시 이벤트 호출
     public void OnTriggerEnter(Collider other)

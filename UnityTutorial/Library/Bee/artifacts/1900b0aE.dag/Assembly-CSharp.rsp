@@ -362,6 +362,7 @@
 "Assets/Animation Clip/Scripts/Parallax.cs"
 "Assets/Instantiate/Scripts/Factory.cs"
 "Assets/Instantiate/Scripts/Mouse.cs"
+"Assets/Instantiate/Scripts/SoundManager.cs"
 "Assets/Instantiate/Scripts/SpawnManager.cs"
 "Assets/Instantiate/Scripts/Unit/Sorceress.cs"
 "Assets/Instantiate/Scripts/Unit/Unit.cs"

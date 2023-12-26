@@ -17086,6 +17086,11 @@ MonoBehaviour:
   speed: 7.5
   state: 0
   animator: {fileID: 95000012058624550}
+  health: 0
+  sound:
+    audioClips:
+    - {fileID: 8300000, guid: 7946477466e381241b9b9cf32d695f99, type: 3}
+    - {fileID: 8300000, guid: 1d38a58a3709c5c45a53a41932a81c95, type: 3}
 --- !u!136 &2531593018877756558
 CapsuleCollider:
   m_ObjectHideFlags: 0
