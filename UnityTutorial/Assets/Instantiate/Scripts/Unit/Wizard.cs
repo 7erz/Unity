@@ -7,5 +7,6 @@ public class Wizard : Unit
     public void Start()
     {
         health = 30;
+        maxHealth = health;
     }
 }

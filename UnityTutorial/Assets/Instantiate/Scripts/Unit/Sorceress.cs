@@ -7,5 +7,6 @@ public class Sorceress : Unit
     public void Start()
     {
         health = 50;
+        maxHealth = health;
     }
 }

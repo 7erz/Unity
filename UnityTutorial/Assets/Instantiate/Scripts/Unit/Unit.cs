@@ -10,6 +10,8 @@ public enum State
     None
 }
 
+//자동으로 컴포넌트가 들어감
+[RequireComponent(typeof(Hpbar))]
 public abstract class Unit : MonoBehaviour
 {
     [SerializeField] GameObject target;
@@ -17,20 +19,34 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] Vector3 dir;
     [SerializeField] Vector3 targetDir;
 
-    [SerializeField] float speed;
-
     [SerializeField] State state;
 
     [SerializeField] Animator animator;
 
+    [SerializeField] float speed;
+
     [SerializeField] protected float health;
+    [SerializeField] protected float maxHealth;
+    [SerializeField] Hpbar hpbar;
 
     [SerializeField] Sound sound = new Sound();
 
-    
+    private void Awake()
+    {
+        //게임이 실행 될 때 게임 오브젝트의 이름을 검색함.
+        target = GameObject.Find("Player");
+        animator = GetComponent<Animator>();
+        hpbar = GetComponent<Hpbar>();
+
+    }
 
     public void OnHit(float damage)
     {
+        if (health <= 0)
+        {
+            return;
+        }
+
         health -= damage;
 
         if(health <= 0 && state != State.Die)
@@ -44,13 +60,7 @@ public abstract class Unit : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Awake()
-    {
-        //게임이 실행 될 때 게임 오브젝트의 이름을 검색함.
-        target = GameObject.Find("Player");
-        animator = GetComponent<Animator>();
-        
-    }
+
     //나의 답
     /*
     private void Start()
@@ -83,8 +93,8 @@ public abstract class Unit : MonoBehaviour
             case State.Die:
                 Die();
                 break;
-
         }
+        hpbar.UpdateHP(health,maxHealth);
     }
     public virtual void Move()
     {

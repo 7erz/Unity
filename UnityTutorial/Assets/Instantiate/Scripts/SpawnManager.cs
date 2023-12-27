@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
             factory.CreateUnit(listUnits[Random.Range(0, listUnits.Count)]);
 
             // new WaitForSeconds(5f) : 특정한 시간동안 코루틴을 대기합니다.
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(8f);
         }
     }
 
