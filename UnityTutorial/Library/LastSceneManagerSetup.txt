@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Instantiate/Scenes/Instantiate Example.unity
+- path: Assets/Character Select/Scenes/Title.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

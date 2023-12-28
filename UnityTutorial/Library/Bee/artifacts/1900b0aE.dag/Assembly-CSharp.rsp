@@ -360,6 +360,7 @@
 "Assets/Anim1/Sport Car - 3D model/Scripts/LightEffects.cs"
 "Assets/Animation Clip/Scripts/AnimatorManger.cs"
 "Assets/Animation Clip/Scripts/Parallax.cs"
+"Assets/Character Select/Scripts/MovingCam.cs"
 "Assets/Instantiate/Scripts/Factory.cs"
 "Assets/Instantiate/Scripts/Hpbar.cs"
 "Assets/Instantiate/Scripts/Mouse.cs"
