@@ -9,7 +9,6 @@ public class MovingCam : MonoBehaviour
 
 
     [SerializeField] List<GameObject> characterList;
-    [SerializeField] int selectCount;
 
     private void Start()
     {
@@ -23,38 +22,38 @@ public class MovingCam : MonoBehaviour
         {
             characterList[i].SetActive(false);
         }
-        characterList[selectCount].SetActive(true);
-        transform.position = new Vector3(selectCount, 0, 0);
+        characterList[CharacterDataManager.Instance.SelectCount].SetActive(true);
+        transform.position = new Vector3(CharacterDataManager.Instance.SelectCount, 0, 0);
     }
 
 
     public void CamLeft()
     {
-        if(selectCount != 0)
+        if(CharacterDataManager.Instance.SelectCount != 0)
         {
-            selectCount--;
+            CharacterDataManager.Instance.SelectCount--;
         }
         else
         {
-            selectCount = characterList.Count - 1;
+            CharacterDataManager.Instance.SelectCount = characterList.Count - 1;
         }
     }
 
     public void CamRight()
     {
-        if (selectCount != characterList.Count - 1)
+        if (CharacterDataManager.Instance.SelectCount != characterList.Count - 1)
         {
-            selectCount++;
+            CharacterDataManager.Instance.SelectCount++;
         }
         else
         {
-            selectCount = 0;
+            CharacterDataManager.Instance.SelectCount = 0;
         }
     }
 
     public void Update()
     {
-        transform.position = new Vector3(selectCount*(-3), 1, 2.5f);
+        transform.position = new Vector3(CharacterDataManager.Instance.SelectCount *(-3), 1, 2.5f);
     }
 
     /*
