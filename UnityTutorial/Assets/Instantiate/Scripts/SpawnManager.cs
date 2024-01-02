@@ -9,9 +9,11 @@ public class SpawnManager : MonoBehaviour
     #region 231120
     //   [0]     [1]
     // 소서리스  마법사
-    [SerializeField] List<Unit> listUnits;
+    //[SerializeField] List<Unit> listUnits;
 
-    [SerializeField] Factory factory;
+    //[SerializeField] Factory factory;
+
+    //0~4까지 활성화, 그후 다시 0으로(다시 1씩 증가)
 
     private void Start()
     {
@@ -26,10 +28,12 @@ public class SpawnManager : MonoBehaviour
         {
             // Random.Range : 0 ~ 최댓값-1의 값을 반환하는 함수입니다. 
             // Random.Range(0, listUnits.Count)
-            factory.CreateUnit(listUnits[Random.Range(0, listUnits.Count)]);
+            //factory.CreateUnit(listUnits[Random.Range(0, listUnits.Count)]);
+            ObjectPool.instance.GetObject();
+
 
             // new WaitForSeconds(5f) : 특정한 시간동안 코루틴을 대기합니다.
-            yield return new WaitForSeconds(8f);
+            yield return new WaitForSeconds(3f);
         }
     }
 
