@@ -23,6 +23,8 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] Animator animator;
 
+    [SerializeField] Vector3 originDir;
+
     [SerializeField] float speed;
 
     [SerializeField] protected float health;
@@ -38,6 +40,13 @@ public abstract class Unit : MonoBehaviour
         animator = GetComponent<Animator>();
         hpbar = GetComponent<Hpbar>();
 
+    }
+
+    private void OnEnable()
+    {
+        state = State.Move;
+        //health = maxHealth;   버그 걸림
+        originDir = transform.position;
     }
 
     public void OnHit(float damage)
@@ -57,7 +66,9 @@ public abstract class Unit : MonoBehaviour
 
     public virtual void Release()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        //오브젝트 풀링 시
+        ObjectPool.instance.InsertObject(gameObject);
     }
 
 
@@ -157,5 +168,11 @@ public abstract class Unit : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         state = State.Move;
+    }
+
+    private void OnDisable()
+    {
+        transform.position = originDir;
+        health = maxHealth;
     }
 }

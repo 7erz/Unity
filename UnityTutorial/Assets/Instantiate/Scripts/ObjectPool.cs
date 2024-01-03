@@ -26,12 +26,13 @@ public class ObjectPool : MonoBehaviour
         {
             instance = this;
         }
+        unitList.Capacity = 20;
+        CreatePool();
     }
 
     private void Start()
     {
-        unitList.Capacity = 20;
-        CreatePool();
+
     }
 
     public void CreatePool()
@@ -55,8 +56,12 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject GetObject()
     {
-        /*
+        
         //activeCount변수의 값을 증가
+        //if(activeCount >= unitList.Count)
+        //{
+        //    activeCount = 0;
+        //}
         activeCount = activeCount % unitList.Count;
 
 
@@ -71,21 +76,28 @@ public class ObjectPool : MonoBehaviour
             return obj;
         }
 
-        return null;*/
-        for (int i = 0; i < unitList.Count; i++)
-        {
-            int currentIndex = (activeCount + i) % unitList.Count;
-            if (!unitList[currentIndex].activeSelf)
-            {
-                GameObject obj = unitList[currentIndex];
-                obj.SetActive(true);
-                activeCount = (currentIndex + 1) % unitList.Count;
-                return obj;
-            }
-        }
-
-
         return null;
+        //서순 문제
+        /*
+        //for (int i = 0; i < unitList.Count; i++)
+        //{
+        //    int currentIndex = (activeCount + i) % unitList.Count;
+        //    if (!unitList[currentIndex].activeSelf)
+        //    {
+        //        GameObject obj = unitList[currentIndex];
+        //        obj.SetActive(true);
+        //        activeCount = (currentIndex + 1) % unitList.Count;
+        //        return obj;
+        //    }
+        //}
+
+
+        //return null;*/
+    }
+
+    public void InsertObject(GameObject prefab)
+    {
+        prefab.SetActive(false);
     }
 
 

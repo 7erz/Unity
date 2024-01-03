@@ -13,5 +13,9 @@ public class Hpbar : MonoBehaviour
     public void UpdateHP(float health, float maxHealth)
     {
         hpSlider.value = health/maxHealth;
+        //if(hpSlider.value == 0)
+        //{
+        //    transform.Find
+        //}
     }
 }
